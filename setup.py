@@ -10,7 +10,7 @@ package_data = {
 }
 setuptools.setup(
     name="seawave_spectrum",
-    version = "v1.1.1",
+    version = "v1.1.2",
     author="Kirill Ponur",
     author_email="ponur@ipfran.ru",
     description="",

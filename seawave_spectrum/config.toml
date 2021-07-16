@@ -1,0 +1,82 @@
+[Swell]
+# Will be available soon
+Enable = false
+# Swell direction in degrees 
+Direction = 120 
+STD = 1 
+
+[Stream]
+# Will be available soon
+Enable = false
+Direction = 0
+Speed = 5 
+
+[Wind]
+Enable = true
+# The direction of the surface wind relative to the axis X
+Direction = 45
+# The speed of the surface wind. Changes in the range from 3 to 17 m/s.
+Speed = 5 # m/s
+
+[Constants]
+# Wave speed (light, sound) in the propagation medium
+WaveSpeed = 1500 # m/s
+EarthRadius  =  6370e3 # m
+GravityAcceleration = 9.81 # m/s^2
+
+[Surface]
+# Non dimensional wind fetch (see ryabkova, 2019). Changes in the range from 1470 to 20170.
+NonDimWindFetch = 20170
+# Distance from surface to bottom of the sea in meters. 
+# Affects the dispersion equation:
+# omega^2 = sqrt(gk + ak^3)*tanh(kH), where
+#	    omega -- angular frequency in rad/s
+#	    g     -- gravity of acceleration 
+#           k     -- wave number
+#           H     -- distance from surface to bottom of the sea in meters 
+FloorHeight = inf
+
+# Two-scale scattering model. 
+# The true value assumes searching for the boundary wavenumber 
+# for the current radar wavelength.
+TwoScaledModel = true
+
+
+[Radar]
+# Current radar wavelength. 
+# Avaiable values: 
+#	1. string "Ka"
+#	2. string "Ku"
+#	3. string "X"
+#	4. string "C"
+#	5. list of floats sorted by wavelength reduction like [0.1, 0.022, 0.008]
+
+# If a string value is selected, then the boundary wavenumber will be 
+# calculated using the predefined approximation equations. 
+# The values in the list allow you to calculate the bounding number for 
+# arbitrary wavelengths.
+
+# The found bounding values are written to the class attribute `spectrum.bounds`.
+# 
+# The attribute contains a list of the left (first element) and right  (last element)
+# boundaries of the spectrum simulation. Between them are the values specified in the list.
+# For example, attribute `bounds` with the specified option `WaveLength = [0.1, 0.022, 0.008]`
+# will take the following form:
+# >>> spectrum.bounds
+# [7.0000e-02 1.4530e+01 6.6720e+01 1.9942e+02]
+# where first element -- left bound of modeling
+#	second element -- bound for wavelength = 10 cm
+#	third element -- bound for wavelength = 2.2 cm
+# 	forth element -- bound for wavelength = 0.8 cm
+# 
+# If the parameter was specified by a string, for example `"Ku"`, 
+# then the attribute will look like this:
+
+# >>> spectrum.bounds
+# [7.000e-02 1.350e+01 4.309e+01 8.713e+01]
+# where first element -- left bound of modeling
+#	second element -- bound for C-band 
+#	third element -- bound for X-band
+# 	forth element -- bound for Ku-band
+
+WaveLength = "Ku"
