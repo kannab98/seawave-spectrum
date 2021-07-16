@@ -1,4 +1,4 @@
-# Model of the spectrum of of surface waves
+# Model of the spectrum of surface waves
 
 
 ## Installation and usage
