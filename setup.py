@@ -9,7 +9,7 @@ package_data = {
     "config files":["config.toml"]
 }
 setuptools.setup(
-    name="seawavepy",
+    name="seawave_spectrum",
     version_command='git describe --tags',
     author="Kirill Ponur",
     author_email="ponur@ipfran.ru",
