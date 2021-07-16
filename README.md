@@ -1,12 +1,13 @@
 # Model of the spectrum of of surface waves
 
-## Installation 
-The installation itself is done by the pip package manager (required git installed):
-`pip install git+https://github.com/kannab98/seawave-spectrum.git`.
 
+## Installation and usage
+The installation itself is done by the pip package manager:
 
+`pip install seawave-spectrum`.
 
-
+After that, copy the file `config.toml` from the repository into the current working directory and the program is ready to use. 
+Basic usage can be found in the examples folder.
 
 
 ## References
