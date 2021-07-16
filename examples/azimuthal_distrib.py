@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import sys
 sys.path.append(".")
-from spectrum import spectrum, config
+from seawave_spectrum import spectrum, config
 
 
 config["Wind"]["Speed"] = 7

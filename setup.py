@@ -10,7 +10,7 @@ package_data = {
 }
 setuptools.setup(
     name="seawave_spectrum",
-    version_command='git describe --tags',
+    version = "v1.1.1",
     author="Kirill Ponur",
     author_email="ponur@ipfran.ru",
     description="",
@@ -21,9 +21,9 @@ setuptools.setup(
     package_data=package_data,
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: GPL License",
+        "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent",
     ],
     python_requires='>=3.6',
-    install_requires=['numpy', 'scipy', 'numba', 'toml'],
+    install_requires=['numpy', 'scipy', 'toml'],
 )
